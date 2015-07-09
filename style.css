@@ -1,0 +1,117 @@
+#content {
+    font-family: arial, sans-serif;
+    color: #595A59;
+
+
+}
+
+#content .form {
+    display: block;
+    vertical-align: top;
+    margin: 0 0 0 10%;
+    width: 100%;
+
+}
+
+#content #print {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    float: right;
+
+}
+
+#content .chart-container {
+    width: 65%;
+    height: 500px;
+    display: inline-block;
+
+
+}
+
+#content #donutchart {
+    width: 100%;
+    height: 500px;
+
+}
+
+#content .form #submit {
+    width: 100px;
+    padding: 5px;
+    font-size: 20px;
+    height: 32px;
+    color: white;
+    background: #82befb;
+    border: none;
+    cursor: pointer;
+
+}
+
+#content #print button {
+    font-size: 24px;
+    padding: 5px 0 0 0;
+    color: #d35c4c;
+    border: none;
+    cursor: pointer;
+    background: none;
+    margin: 0 0 0 20px;
+    vertical-align: text-bottom;
+
+
+}
+
+#content #print {
+    margin: 140px 0 0 0;
+
+}
+
+#content #print ul li {
+    font-size: 22px;
+    list-style-type: none;
+    padding: 0;
+    margin: -15px 0 0 0;
+
+}
+
+#content .form #submit:hover {
+    background: #6694c3;
+
+}
+
+#content #print button:hover{
+    color: #a24539;
+
+}
+
+#content .form input {
+    height: 20px;
+    font-size: 18px;
+    color: #595A59;
+    display: inline-block;
+    padding: 5px;
+
+}
+
+#content h1 {
+    color: #595A59;
+
+}
+
+#content h2 {
+    font-size: 22px;
+    display: inline-block;
+
+}
+
+#content div {
+    display: inline-block;
+    margin: 0 2% 0 0;
+
+
+}
+
+#content .form .button {
+    margin: 20px 0 0 0;
+
+}
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <div id="content">
+        <div class="chart-container">
+            <div id="donutchart"></div>
+        </div>
+        <div id="print"></div>
+        <div class="form">
+            <form>
+                <div class="tool">
+                    <h2>Tool:</h2>
+                    <input type="text" name="name" id="name">
+                </div><!--tool-->
+                <div class="weight">
+                    <h2>Weight:</h2>
+                    <input type="number" name="number" id="number">
+                </div><!--weight-->
+                <div class="button">
+                    <input type="submit" value="Add" id="submit">
+                </div><!--button-->
+            </form>
+        </div>
+    </div><!--content-->
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        var dataArray = [
+            ['Task', 'Hours per Day']
+        ];
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(dataArray);
+            var options = {
+                title: 'Property Management Solutions',
+                titleTextStyle: {
+                    color: '#595A59',
+                    fontSize: 36
+                },
+                pieHole: 0.4,
+                fontSize: 24,
+                chartArea: {
+                    top: 150
+                },
+                legend: {
+                    textStyle: {
+                        color: '#595A59',
+                        fontSize: 18
+                    }
+                },
+                tooltip: {
+                    textStyle: {
+                        color: '#595A59'
+                    }
+                }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+
+        $( "form" ).submit(function( event ) {
+            var slices = $( this ).serializeArray();
+            var sliceName = slices[0].value;
+            var sliceNumber = parseInt(slices[1].value);
+            console.log(sliceName);
+            console.log(sliceNumber);
+            dataArray.push([sliceName, sliceNumber]);
+            console.log(dataArray);
+            event.preventDefault();
+            drawChart();
+            printArray();
+            $('#name').val('');
+            $('#number').val('');
+        });
+
+        function printArray() {
+            document.getElementById("print").innerHTML = "";
+            for (var i=1; i<dataArray.length; i++) {
+                document.getElementById("print").innerHTML += "<ul><li>" + i + ". " + dataArray[i].join(": ") + "<button onclick='deleteSlice(" + i + ")'><i class='fa fa-trash'</button></li></ul>";
+                console.log(dataArray[i]);
+            }
+        }
+
+        function deleteSlice(id) {
+            console.log(id);
+            dataArray.splice(id);
+            console.log(dataArray);
+            drawChart();
+            printArray()
+        }
+
+
+
+    </script>
+</html>
