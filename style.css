@@ -8,21 +8,20 @@
 #content .form {
     display: block;
     vertical-align: top;
-    margin: 0 0 0 10%;
+    margin: 0 0 0 175px;
     width: 100%;
 
 }
 
 #content #print {
     display: inline-block;
-    width: 30%;
+    width: 200px;
     vertical-align: top;
-    float: right;
 
 }
 
 #content .chart-container {
-    width: 65%;
+    width: 1000px;
     height: 500px;
     display: inline-block;
 
